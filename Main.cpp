@@ -3,13 +3,62 @@
 
 int main()
 {
-	LinkedList<int> list;
+	DLinkedList<int> list;
+
 	list.PushFront(5);
 	list.PushBack(6);
 	list.PushFront(4);
 	list.PushBack(7);
 
+	auto head = list.Front();
+	if (!head)
+	{
+		std::cout << "Head Error: " << head.error() << std::endl;
+	}
+	else
+	{
+		std::cout << "Head: " << *head << std::endl;
+	}
+
+	auto tail = list.Back();
+	if (!tail)
+	{
+		std::cout << "Tail Error: " << tail.error() << std::endl;
+	}
+	else
+	{
+		std::cout << "Tail: " << *tail << std::endl;
+	}
+
 	std::cout << list << std::endl;
+	std::cout << "DList Length Before Pop: " << list.Length() << std::endl;
+
+	list.PopFront();
+	//list.PopBack();
+	//list.PopBack();
+	//list.PopFront();
+
+	auto head2 = list.Front();
+	if (!head2)
+	{
+		std::cout << "Head Error: " << head2.error() << std::endl;
+	}
+	else
+	{
+		std::cout << "Head: " << *head2 << std::endl;
+	}
+
+	auto tail2 = list.Back();
+	if (!tail2)
+	{
+		std::cout << "Tail Error: " << tail2.error() << std::endl;
+	}
+	else
+	{
+		std::cout << "Tail: " << *tail2 << std::endl;
+	}
+	std::cout << list << std::endl;
+	std::cout << "DList Length After Pop: " << list.Length() << std::endl;
 
 	return 0;
 }
