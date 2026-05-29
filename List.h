@@ -378,26 +378,28 @@ class DLinkedList
 			mLength -= 1;
 		}
 
-		Iterator begin() { Iterator(mHead.get()); }
-		Iterator end() { Iterator(nullptr); }
-};
-template<typename T>
-std::ostream& operator<<(const std::ostream& stream, const DLinkedList<T> list)
-{
-	stream << "[";
-	auto it = list.begin();
+		Iterator begin() { return Iterator(mHead.get()); }
+		Iterator end() { return Iterator(nullptr); }
 
-	while (it != list.end())
-	{
-		stream << *it;
-		++it;
-
-		if (it != list.end())
+		friend std::ostream& operator<<(std::ostream& stream, DLinkedList<T>& list)
 		{
-			stream << " -> ";
-		}
-	}
+			stream << "[";
+			auto it = list.begin();
 
-	stream << "]";
-	return stream;
-}
+			while (it != list.end())
+			{
+				stream << *it;
+				++it;
+				
+				if (it != list.end())
+				{
+					stream << " -> ";
+				}
+			}
+			stream << "]";
+			return stream;
+		}
+		
+};
+
+

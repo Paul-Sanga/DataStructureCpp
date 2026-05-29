@@ -3,6 +3,16 @@
 
 int main()
 {
+	//Linked List
+	LinkedList<int> col;
+	col.PushFront(6);
+	col.PushBack(7);
+	col.PushFront(5);
+	col.PushBack(8);
+
+	std::cout << col << std::endl;
+
+	// Doubly-Linked List
 	DLinkedList<int> list;
 
 	list.PushFront(5);
