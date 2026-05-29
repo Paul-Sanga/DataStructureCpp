@@ -1,5 +1,6 @@
 #include<iostream>
 #include"List.h"
+#include"Stack.h"
 
 int main()
 {
@@ -69,6 +70,16 @@ int main()
 	}
 	std::cout << list << std::endl;
 	std::cout << "DList Length After Pop: " << list.Length() << std::endl;
+
+	// Stack section
+	Stack<int> stack;
+	stack.Push(5);
+	stack.Push(6);
+	stack.Push(7);
+	stack.Pop();
+	//std::cout << "Removed: " << stack.Pop() << " New Peek Is: " << stack.Peek() << std::endl;
+	std::cout << "Stack Length: " << stack.Size() << std::endl;
+	std::cout << "Stack Peek's: " << stack.Peek() << std::endl;
 
 	return 0;
 }
